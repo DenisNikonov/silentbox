@@ -7,9 +7,8 @@
       @click="openOverlay(image, index)"
       class="silentbox-item"
     >
-      <slot name='inner-image' v-if='inner'/>
+      <slot name='inner-image' v-if='inner' :index='index' />
       <img
-        v-else
         :src="image.thumbnail"
         :alt="image.alt"
         :width="image.thumbnailWidth"
