@@ -1,12 +1,13 @@
 <template>
   <section id="silentbox-gallery">
-    <slot />
+    <slot name='append'/>
     <div
       v-for="(image, index) in galleryItems"
       :key="image.src"
       @click="openOverlay(image, index)"
       class="silentbox-item"
     >
+      <slot name='inner-image' />
       <img
         :src="image.thumbnail"
         :alt="image.alt"
@@ -14,6 +15,8 @@
         :height="image.thumbnailHeight"
       >
     </div>
+    <slot name='prepand'/>
+
     <silentbox-overlay
       :overlay-item="overlay.item"
       :visible="overlay.visible"
