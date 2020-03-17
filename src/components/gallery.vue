@@ -7,8 +7,9 @@
       @click="openOverlay(image, index)"
       class="silentbox-item"
     >
-      <slot name='inner-image' />
+      <slot name='inner-image' v-if='inner'/>
       <img
+        v-else
         :src="image.thumbnail"
         :alt="image.alt"
         :width="image.thumbnailWidth"
@@ -41,6 +42,10 @@ export default {
       default: () => {
         return []
       }
+    },
+    inner: {
+      type: Boolean,
+      default: false
     },
     image: {
       type: Object,
