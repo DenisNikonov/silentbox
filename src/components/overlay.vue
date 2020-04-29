@@ -30,11 +30,13 @@
           <!-- local/embed image rendering -->
           <img v-else :src="overlayItem.src" :alt="overlayItem.alt" width="auto" height="auto" >
         </div>
-        <p
+        <vue-mathjax
           id="silentbox-overlay__description"
-          v-if="overlayItem.description">
-            {{ overlayItem.description }}
-        </p>
+          v-if="overlayItem.description"
+          :fomula="overlayItem.description"
+        >
+            <!-- {{ overlayItem.description }} -->
+        </vue-mathjax>
       </div>
     </div>
 
