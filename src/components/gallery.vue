@@ -93,7 +93,8 @@ export default {
           thumbnail: '',
           autoplay: false,
           controls: true,
-          description: ''
+          description: '',
+          component: 'vue-mathjax'
         },
         visible: false,
         currentItem: 0,
