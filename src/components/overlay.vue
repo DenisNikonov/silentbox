@@ -33,7 +33,7 @@
         <vue-mathjax
           id="silentbox-overlay__description"
           v-if="overlayItem.description"
-          :fomula="overlayItem.description"
+          :formula="overlayItem.description"
         >
             <!-- {{ overlayItem.description }} -->
         </vue-mathjax>
@@ -71,7 +71,7 @@
 
 <script>
 import itemMixim from './../mixins/item'
-import {VueMathjax} from 'vue-mathjax'
+import { VueMathjax } from 'vue-mathjax'
 export default {
   name: 'SilentboxOverlay',
   mixins: [itemMixim],
