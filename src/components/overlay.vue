@@ -30,14 +30,13 @@
           <!-- local/embed image rendering -->
           <img v-else :src="overlayItem.src" :alt="overlayItem.alt" width="auto" height="auto" >
         </div>
-        <component
-          :is='overlayItem.component'
+        <vue-mathjax
           id="silentbox-overlay__description"
           v-if="overlayItem.description"
           :fomula="overlayItem.description"
         >
             <!-- {{ overlayItem.description }} -->
-        </component>
+        </vue-mathjax>
       </div>
     </div>
 
@@ -72,10 +71,13 @@
 
 <script>
 import itemMixim from './../mixins/item'
-
+import {VueMathjax} from 'vue-mathjax'
 export default {
   name: 'SilentboxOverlay',
   mixins: [itemMixim],
+  components: {
+    'vue-mathjax': VueMathjax
+  },
   props: {
     overlayItem: {
       type: Object,
